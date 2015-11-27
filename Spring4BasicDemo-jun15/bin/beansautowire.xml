@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- autowiring by name -->
+
+<bean id="shape" class="com.autowire.Square" autowire-candidate="false">
+</bean>
+
+<bean id="circle" class="com.autowire.Circle"  autowire-candidate="false">
+</bean>
+<!-- autowiring by type -->
+<!--  autowiring by constructor chooses similar to byType
+by rejecting autowire candidates
+-->
+<bean id="rect" class="com.autowire.Rectangle"> </bean>
+
+<bean id="shapefac1" class="com.autowire.ShapeFactory"
+autowire="byName" >
+ </bean>
+<bean id="shapefac2" class="com.autowire.ShapeFactory"
+autowire="byType"></bean>
+
+<bean id="shapefac3" class="com.autowire.ShapeFactory"
+autowire="constructor"></bean>
+
+ 
+
+
+
+
+</beans>

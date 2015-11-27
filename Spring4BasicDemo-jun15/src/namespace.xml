@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="addressBean" class="com.setterDI.Address"
+p:city="Bangalore" p:state="Kar">
+</bean>
+<bean id="propEmp" class="com.setterDI.Employee" 
+  p:name="Ram" p:salary="1000" p:address-ref="addressBean">
+</bean>
+
+<bean id="addressBean1" class="com.constructorDI.Address"
+p:city="Mangalore" p:state="Kar">
+</bean>
+<bean id="constStud" class="com.constructorDI.Student" 
+  c:name="10" c:address-ref="addressBean1">
+  
+</bean>
+
+</beans>

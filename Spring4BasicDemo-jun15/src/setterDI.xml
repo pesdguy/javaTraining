@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employee" class="com.setterDI.Employee">
+		<property name="name" value="Ram"></property>
+		<property name="salary" value="2000"></property>
+		<property name="phone" value="1000"></property>
+		<property name="address" ref="addressBean"></property>
+	</bean>
+
+	<bean id="addressBean" class="com.setterDI.Address">
+		<property name="city" value="bangalore"></property>
+	</bean>
+
+	<!--Using Inner Bean -->
+
+
+
+	<bean id="innemp" class="com.setterDI.Employee">
+		<property name="name" value="Ram"></property>
+		<property name="salary" value="2000"></property>
+		<property name="phone" value="1000"></property>
+		<property name="address">
+			<bean class="com.setterDI.Address">
+				<property name="city" value="bangalore"></property>
+			</bean>
+		</property>
+	</bean>
+		
+	<!-- populating the arraylist -->
+
+	<bean name="studbean1" class="com.setterDI.Student">
+		<property name="name" value="Ramana"></property>
+		<property name="books">
+			<list>
+				<value>Java</value>
+				<value>Jsp</value>
+				<value>Struts</value>
+				<value>Spring</value>
+			</list>
+		</property>
+		
+		
+		<property name="courseList">
+			<list>
+				<ref bean="course1"></ref>
+				<ref bean="course2"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="course1" class="com.setterDI.Courses">
+		<property name="name" value="Angular"></property>
+		<property name="fees" value="2000"></property>
+	</bean>
+	<bean id="course2" class="com.setterDI.Courses">
+		<property name="name" value="Node"></property>
+		<property name="fees" value="29000"></property>
+	</bean>
+	
+	<!-- using inner bean, arraylist of string, objects  -->
+	<bean name="studbean2" class="com.setterDI.Student">
+		<property name="name" value="Ramana"></property>
+		<property name="books">
+			<list>
+				<value>Java</value>
+				<value>Jsp</value>
+				<value>Struts</value>
+				<value>Spring</value>
+			</list></property>
+		<property name="courseList">
+			<list>
+				<bean class="com.setterDI.Courses">
+					<property name="name" value="Java"></property>
+					<property name="fees" value="2000"></property>
+				</bean>
+				<bean class="com.setterDI.Courses">
+					<property name="name" value="Spring"></property>
+					<property name="fees" value="29000"></property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="nameEmp" class="com.setterDI.Employee"
+	   p:name="Tom" p:address-ref="addressBean" p:salary="1000"></bean>
+	
+	
+
+</beans>

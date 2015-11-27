@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.4.0.201310051539-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/scope.xml</config>
+		<config>src/beanlife.xml</config>
+		<config>src/setterDI.xml</config>
+		<config>src/constDIforEmp.xml</config>
+		<config>src/constDIforStud.xml</config>
+		<config>src/namespace.xml</config>
+		<config>src/beansautowire.xml</config>
+		<config>src/annotationbean.xml</config>
+	</configs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
